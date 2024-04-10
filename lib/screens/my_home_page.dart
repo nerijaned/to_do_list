@@ -40,10 +40,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 300,
                   color: Colors.white,
                   child: Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: const EdgeInsets.all(7.0),
                     child: TableCalendar(
                       calendarFormat: CalendarFormat.month,
-                      headerVisible: false,
+                      headerVisible: true,
                       focusedDay: DateTime.now(),
                       firstDay: DateTime(2023),
                       lastDay: DateTime(2025),
