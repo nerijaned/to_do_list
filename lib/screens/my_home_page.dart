@@ -9,16 +9,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  TextEditingController nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
          backgroundColor: Color.fromARGB(255, 255, 163, 213),
+         toolbarHeight: 70.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              height: 80,
+              height: 90,
               child: Image.asset('assets/rdplogo.png'),
             ),
             Text('Daily Planner',
@@ -43,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(7.0),
                     child: TableCalendar(
                       calendarFormat: CalendarFormat.month,
-                      headerVisible: true,
+                      headerVisible: false,
                       focusedDay: DateTime.now(),
                       firstDay: DateTime(2023),
                       lastDay: DateTime(2025),
@@ -51,7 +55,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 350,
+                      height: 100,
+                      child: TextField(
+                      maxLength: 20,
+                      controller: nameController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                          labelText: 'Add To-Do List Item',
+                      ),
+                    )
+                    ),
+                  ],
+                ),
+              ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ElevatedButton(onPressed: null, child: Text('Submit')),
+          ),
           ],
           ),
         ),
