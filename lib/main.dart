@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/screens/my_home_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:to_do_list/screens/my_home_page.dart';
+import 'package:to_do_list/screens/auth_gate.dart';
+import 'package:to_do_list/screens/logout.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:to_do_list/firebase_options.dart';
+
 
 void main() async{
 
@@ -27,7 +30,11 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage()
+      home: const AuthGate(),
+      routes: {
+        '/logout' : (context) => Logout(),
+        '/auth_gate' : (context) => AuthGate(),
+      },
     );
   }
 }

@@ -1,5 +1,5 @@
 name: to_do_list
-description: "A new Flutter project."
+description: "Flutter project for SWDV 1011 by Nerizza Jane de Jesus."
 publish_to: 'none'
 version: 0.1.0
 
@@ -10,17 +10,26 @@ dependencies:
   cloud_firestore: ^4.16.1
   flutter:
     sdk: flutter
+  #needed for connecting the app to firestore
   firebase_core: ^2.15.1
-  intl: ^0.19.0
+  #used for date formatting
+  intl: ^0.18.0
+  firebase_auth: ^4.19.2
+  firebase_ui_auth: ^1.13.1
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  table_calendar: ^3.1.1
+  #used in displaying calendar in app
+  table_calendar: ^3.0.9
+  weather: ^3.1.1
 
 flutter:
+#material design is the design language for android
   uses-material-design: true
+#folder pathway to the app's assets such as images, fonts, etc
   assets:
     - assets/
   fonts:
